@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Components/Loader";
@@ -12,7 +12,6 @@ import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 function ProductEditScreen() {
   const params = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const productId = params.id;
 
   const [name, setName] = useState("");

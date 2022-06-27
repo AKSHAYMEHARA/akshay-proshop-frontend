@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import Product from "../Components/Product";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,6 @@ import ProductCarousel from "../Components/ProductCarousel";
 
 function HomeScreen() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   let keyword = location.search;
   const productList = useSelector((state) => state.productList);

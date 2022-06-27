@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Button, ListGroup, Image, Card } from "react-bootstrap";
-import FormContainer from "../Components/FormContainer";
 import CheckOutSteps from "../Components/CheckOutSteps";
 import Message from "../Components/Message";
 import { createOrder } from "../actions/orderActions";
@@ -34,7 +33,7 @@ function PlaceOrderScreen() {
       navigate(`/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
     }
-  }, [success, navigate]);
+  }, [dispatch, order, success, navigate]);
 
   const placeOrder = () => {
     dispatch(

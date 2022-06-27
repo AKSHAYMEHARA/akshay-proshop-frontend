@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Button, ListGroup, Image, Card } from "react-bootstrap";
-import FormContainer from "../Components/FormContainer";
 import Loader from "../Components/Loader";
 import Message from "../Components/Message";
 import { getOrderDetails, deliverOrder } from "../actions/orderActions";
@@ -38,7 +37,7 @@ function OrderScreen() {
       dispatch(getOrderDetails(orderId));
       dispatch({ type: ORDER_DELIVER_RESET });
     }
-  }, [dispatch, order, orderId, successDeliver, navigate]);
+  }, [userInfo, dispatch, order, orderId, successDeliver, navigate]);
 
   const deliverHandler = () => {
     dispatch(deliverOrder(order));

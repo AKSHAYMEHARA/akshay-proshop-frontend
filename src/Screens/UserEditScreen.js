@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button } from "react-bootstrap";
 import Message from "../Components/Message";
@@ -10,7 +10,6 @@ import { USER_UPDATE_RESET } from "../constants/userConstants";
 
 function UserEditScreen() {
   let navigate = useNavigate();
-  let location = useLocation();
   const params = useParams();
   const userId = params.id;
   const userDetails = useSelector((state) => state.userDetails);
@@ -41,7 +40,7 @@ function UserEditScreen() {
         setIsAdmin(user.isAdmin);
       }
     }
-  }, [user, userId, successUpdate, navigate]);
+  }, [dispatch, user, userId, successUpdate, navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
