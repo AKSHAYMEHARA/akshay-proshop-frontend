@@ -1,0 +1,26 @@
+.card {
+  overflow: hidden;
+}
+.card img {
+  transition: all 0.2s;
+}
+.card img:hover {
+  transform: scale(1.1);
+}
+.card-body a {
+  text-decoration: none;
+  color: black;
+}
+.card-body a:hover {
+  color: coral;
+}
+
+.rating span {
+  margin: 0.1em;
+}
+.addToCart {
+  margin: 10px;
+}
+#basic-navbar-nav {
+  justify-content: flex-end;
+}
